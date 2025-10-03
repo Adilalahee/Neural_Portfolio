@@ -24,7 +24,7 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="space-y-4 animate-in fade-in slide-in-from-bottom duration-700" style={{ animationDelay: "100ms" }}>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-display font-bold leading-tight text-start">
-                This is Syed Adil Mohammad Noor-A-Alahee{" "}
+                Syed Adil Mohammad Noor-A-Alahee{" "}
               </h1>
               <span className="gradient-primary text-2xl font-semibold text-start text-white bg-clip-text text-transparent block">
                 Software Service Engineer
@@ -52,7 +52,7 @@ const Hero = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-primary text-foreground hover:bg-primary/10 font-semibold"
+                className="border-primary hover-white hover-border-glow text-foreground hover:bg-primary/10 font-semibold"
                 asChild
               >
                 <a href="https://drive.google.com/file/d/1z3Ek8u_CiByTWXrBXIpLDT-FlZ_A8Ys_/view?usp=sharing" download>

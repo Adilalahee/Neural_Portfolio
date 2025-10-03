@@ -91,5 +91,22 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"),function({ addUtilities }) {
+      const newUtilities = {
+        '.hover-white:hover': {
+          color: 'white !important',
+        },
+        '.hover-white:hover *': {
+          color: 'white !important',
+        },
+           '.hover-border-glow': {
+          transition: 'all 0.3s ease',
+        },
+        '.hover-border-glow:hover': {
+          borderColor: 'rgb(59, 130, 246)',
+          boxShadow: '0 0 15px rgba(59, 130, 246, 0.5)',
+        },
+      }
+      addUtilities(newUtilities)
+    }],
 } satisfies Config;

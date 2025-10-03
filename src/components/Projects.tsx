@@ -95,7 +95,7 @@ const Projects = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom duration-700">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            Featured <span className="gradient-primary bg-clip-text text-transparent">Projects</span>
+            Featured <span className="gradient-primary text-white bg-clip-text text-transparent">Projects</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Real-world applications showcasing technical expertise and problem-solving skills
@@ -140,11 +140,11 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <div className="flex gap-3 pt-4">
+                <div className="flex flex-col sm:flex-row gap-3 pt-4">
                   <Button
                     variant="outline"
                     size="sm"
-                    className="border-primary text-foreground hover:bg-primary/10"
+                    className="border-primary text-foreground hover-white hover-border-glow hover:bg-primary/10"
                     asChild
                   >
                     <a href={project.github_client} target="_blank" rel="noopener noreferrer">
@@ -155,7 +155,7 @@ const Projects = () => {
                      <Button
                     variant="outline"
                     size="sm"
-                    className="border-primary text-foreground hover:bg-primary/10"
+                    className="border-primary hover-white hover-border-glow text-foreground hover:bg-primary/10"
                     asChild
                   >
                     <a href={project.github_server} target="_blank" rel="noopener noreferrer">

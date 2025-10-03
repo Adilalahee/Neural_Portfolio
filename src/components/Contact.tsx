@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Send, Github, Linkedin } from "lucide-react";
+import { Mail, MapPin, Send, Github, Linkedin,MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 import coverimage from "../assets/adilalaheee.jpg"
@@ -23,43 +23,94 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
 
-    try {
-      const validatedData = contactSchema.parse(formData);
+  //   try {
+  //     const validatedData = contactSchema.parse(formData);
       
-      // Simulate form submission
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+  //     // Simulate form submission
+  //     await new Promise((resolve) => setTimeout(resolve, 1000));
       
+  //     toast({
+  //       title: "Message sent!",
+  //       description: "Thank you for reaching out. I'll get back to you soon.",
+  //     });
+      
+  //     setFormData({ name: "", email: "", message: "" });
+  //   } catch (error) {
+  //     if (error instanceof z.ZodError) {
+  //       toast({
+  //         title: "Validation error",
+  //         description: error.errors[0].message,
+  //         variant: "destructive",
+  //       });
+  //     }
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    // Validate form data using Zod
+    const validatedData = contactSchema.parse(formData);
+
+    // Send POST request to PHP endpoint
+    const response = await fetch("https://adilalahee.com/contact.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(validatedData),
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
       toast({
         title: "Message sent!",
         description: "Thank you for reaching out. I'll get back to you soon.",
       });
-      
       setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        toast({
-          title: "Validation error",
-          description: error.errors[0].message,
-          variant: "destructive",
-        });
-      }
-    } finally {
-      setIsSubmitting(false);
+    } else {
+      toast({
+        title: "Error",
+        description: result.message || "Failed to send message. Please try again later.",
+        variant: "destructive",
+      });
     }
-  };
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      toast({
+        title: "Validation error",
+        description: error.errors[0].message,
+        variant: "destructive",
+      });
+    } else {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    }
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   const contactInfo = [
-    { icon: Mail, label: "Email", value: "adilalahee@yahoo.com", href: "mailto:your.adilmdctg@gmail.com" },
+    { icon: Mail, label: "Email", value: "adilalahee@yahoo.com", href: "mailto:adilmdctg@gmail.com" },
     { icon: MapPin, label: "Location", value: "Dhaka, Bangladesh", href: "#" },
   ];
 
   const socialLinks = [
     { icon: Github, label: "GitHub", href: "https://github.com/Adilalahee" },
     { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/adilalahee" },
+    { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/8801849255411" },
   ];
 
   return (

@@ -89,7 +89,7 @@ const Skills = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom duration-700">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-            Skills <span className="gradient-accent bg-clip-text text-transparent">Expertise</span>
+            Skills & <span className="gradient-accent bg-clip-text text-white text-transparent">Expertise</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             A comprehensive toolkit built through years of hands-on experience

@@ -5,67 +5,60 @@ import { Award, ExternalLink, Zap } from "lucide-react";
 const Certifications = () => {
   const certifications = [
     {
-      title: "Agile Project Management",
-      issuer: "HP Life",
-      date: "2024",
-      category: "Agile",
-      verifyUrl: "#",
+      title: "Oracle Cloud Infrastructure 2025 AI Foundations Associate",
+      issuer: "Oracle",
+      date: "2025",
+      category: "AI",
+      verifyUrl: "https://drive.google.com/file/d/1GE7gGjryI45Y87B_5KzNmWWCis3Nwcuo/view?usp=sharing",
     },
     {
-      title: "Six Sigma White Belt",
-      issuer: "Six Sigma Council",
-      date: "2023",
-      category: "Process",
-      verifyUrl: "#",
+      title: "AI for All: From Basics to GenAI Practice",
+      issuer: "Nvidia",
+      date: "2025",
+      category: "AI",
+      verifyUrl: "https://drive.google.com/file/d/1DWcanx0G6i5zCpgGDPbwONksqqiBOZQv/view?usp=sharing",
     },
-    {
-      title: "Introduction to Cybersecurity",
-      issuer: "Cisco Networking Academy",
-      date: "2023",
-      category: "Security",
-      verifyUrl: "#",
-    },
-    {
-      title: "Cisco Certified Network Associate (CCNA)",
-      issuer: "Cisco",
-      date: "2022",
-      category: "Networking",
-      verifyUrl: "#",
-    },
-    {
-      title: "Oracle APEX Application Development",
-      issuer: "Oracle University",
-      date: "2024",
-      category: "Database",
-      verifyUrl: "#",
+        {
+      title: "Introduction to Cloud 101",
+      issuer: "AWS",
+      date: "2025",
+      category: "Cloud",
+      verifyUrl: "https://drive.google.com/file/d/1ofGmILZLqLJcn2sm7e3xfxVjiw4fi28k/view?usp=sharing",
     },
     {
       title: "Web Design & Development",
-      issuer: "BASIS Institute of Technology & Management",
-      date: "2021",
+      issuer: "Web Development",
+      date: "2025",
       category: "Web Dev",
-      verifyUrl: "#",
+      verifyUrl: "https://drive.google.com/file/d/1fC6kLH9wzDOC_fyiuGUp-rFSKIg1_tiq/view?usp=sharing",
     },
     {
-      title: "Mobile App Development",
-      issuer: "BASIS Institute of Technology & Management",
-      date: "2021",
-      category: "Mobile",
-      verifyUrl: "#",
+      title: "Cisco Certified Network Associate (CCNA)",
+      issuer: "New Vision Information Technology Limited ",
+      date: "2025",
+      category: "Networking",
+      verifyUrl: "https://drive.google.com/file/d/1R7CQttHKU4_rdlbOTKx3VGJMR-xX5Tsd/view?usp=sharing",
+    },
+        {
+      title: "Introduction to Cybersecurity",
+      issuer: "Cisco Networking Academy",
+      date: "2024",
+      category: "Security",
+      verifyUrl: "https://drive.google.com/file/d/1vfGDjASPliisHnvbyCQRcFLI273FJIas/view?usp=sharing",
+    },
+        {
+      title: "Data Center Physical Infrastructure",
+      issuer: "Schneider Electric",
+      date: "2024",
+      category: "Infrastructure",
+      verifyUrl: "https://drive.google.com/file/d/1EOLfppMziLT5HAdHGY4zEmi5nC5mojs5/view?usp=sharing",
     },
     {
       title: "Technical Support Fundamentals",
       issuer: "Google / Coursera",
       date: "2023",
       category: "Support",
-      verifyUrl: "#",
-    },
-    {
-      title: "Data Center Physical Infrastructure",
-      issuer: "Huawei",
-      date: "2022",
-      category: "Infrastructure",
-      verifyUrl: "#",
+      verifyUrl: "https://drive.google.com/file/d/1ygVyzJ9VXDizgLw94oKJs4BAUcFXiOuO/view?usp=sharing",
     },
   ];
 
@@ -99,7 +92,7 @@ const Certifications = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {certifications.map((cert, index) => (
             <Card
               key={cert.title}

@@ -32,68 +32,106 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
-        isScrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "bg-background/80 backdrop-blur-lg border-b border-border shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
+          {/* Logo - Left Side */}
           <button
             onClick={() => scrollToSection("hero")}
-            className="text-xl font-display font-bold gradient-primary bg-clip-text text-transparent hover:opacity-80 transition-smooth"
+            className="hover:opacity-80 transition-all duration-300 z-50"
           >
-            Portfolio
+            <img 
+              src="https://i.ibb.co/Wv1wQMvR/adilalahee-logo.png" 
+              alt="Adil Alahee Logo" 
+              className="h-10 w-auto md:h-12"
+            />
           </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Desktop Navigation - Right Side */}
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="text-muted-foreground hover:text-foreground transition-smooth font-medium"
+                className="text-muted-foreground hover:text-foreground transition-all duration-300 font-medium relative group"
               >
                 {link.label}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
             <Button
               onClick={() => scrollToSection("contact")}
-              className="gradient-accent text-accent-foreground font-semibold"
+              className="gradient-accent text-accent-foreground font-semibold px-6 hover:scale-105 transition-all duration-300"
             >
               Get in Touch
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Hamburger Menu Button - Right Side */}
           <button
-            className="md:hidden text-foreground"
+            className="lg:hidden text-foreground hover:text-primary transition-all duration-300 z-50"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4 animate-in fade-in slide-in-from-top">
-            {navLinks.map((link) => (
+        {/* Mobile Navigation - Slide-in from Right */}
+        <div
+          className={`lg:hidden fixed top-0 right-0 h-screen w-64 bg-background/95 backdrop-blur-xl border-l border-border shadow-2xl transform transition-transform duration-300 ease-in-out ${
+            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div className="flex flex-col pt-20 px-6 space-y-6">
+            {navLinks.map((link, index) => (
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="block w-full text-left text-muted-foreground hover:text-foreground transition-smooth font-medium py-2"
+                className="text-left text-lg text-muted-foreground hover:text-foreground transition-all duration-300 font-medium py-3 border-b border-border/50 hover:border-primary"
+                style={{
+                  animation: isMobileMenuOpen ? `slideIn 0.3s ease-out ${index * 0.1}s both` : 'none'
+                }}
               >
                 {link.label}
               </button>
             ))}
             <Button
               onClick={() => scrollToSection("contact")}
-              className="w-full gradient-accent text-accent-foreground font-semibold"
+              className="w-full gradient-accent text-accent-foreground font-semibold py-3 mt-4 hover:scale-105 transition-all duration-300"
+              style={{
+                animation: isMobileMenuOpen ? `slideIn 0.3s ease-out ${navLinks.length * 0.1}s both` : 'none'
+              }}
             >
               Get in Touch
             </Button>
           </div>
+        </div>
+
+        {/* Overlay for Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div
+            className="lg:hidden fixed inset-0 bg-black/50 backdrop-blur-sm -z-10"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
         )}
       </div>
+
+      <style>{`
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateX(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      `}</style>
     </nav>
   );
 };
