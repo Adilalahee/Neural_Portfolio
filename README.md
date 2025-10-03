@@ -7,32 +7,30 @@ This portfolio represents an evolution in my development journey. While my previ
 Starting with Lovable’s AI-generated foundation, I brought the project into a local development environment where I extensively customized and optimized every section. The result is a seamless fusion of AI efficiency and developer expertise, delivering a robust, performant, and visually compelling portfolio reflective of my professional brand.
 
 Why This Portfolio?<br>
-•	Accelerated Development: Leveraged AI to scaffold a solid, functional baseline rapidly
-•	Deep Customization: Manually refined UI, UX, and performance for a bespoke feel
-•	Modern Tech Stack: Utilized React.js, Next.js, Tailwind CSS, and other advanced tools
-•	Responsive & Accessible: Designed for all devices with accessibility best practices
-•	Showcasing Growth: Reflects continuous learning and adaptation in software engineering and AI
+•	Accelerated Development: Leveraged AI to scaffold a solid, functional baseline rapidly<br>
+•	Deep Customization: Manually refined UI, UX, and performance for a bespoke feel<br>
+•	Modern Tech Stack: Utilized React.js, Next.js, Tailwind CSS, and other advanced tools<br>
+•	Responsive & Accessible: Designed for all devices with accessibility best practices<br>
+•	Showcasing Growth: Reflects continuous learning and adaptation in software engineering and AI<br>
 
 Technology Stack:<br>
-•	Frontend: React.js, Next.js, Tailwind CSS, Daisy UI
-•	Backend: Node.js, Express.js
-•	Databases: MongoDB, PostgreSQL (where applicable)
-•	Styling & UI Libraries: shadcn-ui, Bootstrap
-•	Other Tools: TypeScript, Firebase, JWT Authentication, REST APIs
-•	Version Control & Deployment: Git, GitHub, Vercel, Netlify, Render
-•	AI-Powered Development Tool: Lovable
+•	Frontend: React.js, Next.js, Tailwind CSS, Daisy UI<br>
+•	Styling & UI Libraries: shadcn-ui, Bootstrap<br>
+•	Other Tools: TypeScript<br>
+•	Version Control & Hosting: Git, GitHub, cPanel (frontend deployment only)<br>
+•	AI-Powered Development Tool: Lovable<br>
 
 Development Workflow:<br>
-•	Initiated AI-driven prototype generation via Lovable
-•	Migrated project locally for thorough customization, feature development, and optimization
-•	Integrated CI/CD pipelines for continuous deployment and hosting
-•	Maintained active enhancements reflecting evolving skills and technologies
+•	Initiated AI-driven prototype generation via Lovable<br>
+•	Migrated project locally for thorough customization, feature development, and optimization<br>
+•	Configured for cPanel deployment (frontend hosting only)<br>
+•	Ongoing improvements reflecting evolving skills and technologies<br>
 
 Getting Started:<br>
-•	Clone this repository and follow the commands to run locally:
-•	bash
-•	git clone https://github.com/Adilalahee/Neural_Portfolio.git
-•	cd portfolio
-•	npm install
-•	npm run dev
+•	Clone this repository and follow the commands to run locally:<br>
+•	bash<br>
+•	git clone https://github.com/Adilalahee/Neural_Portfolio.git<br>
+•	cd portfolio<br>
+•	npm install<br>
+•	npm run dev<br>
 
